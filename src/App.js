@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import "./App.scss";
+
+import LimitedRoute from "./components/LimitedRoute";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Items from "./pages/Items";
+import Customers from "./pages/Customers";
+import Transactions from "./pages/Transactions";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <LimitedRoute path="/login" component={() => <Login />} />
+        <Route exact path="/" component={Home} />
+        <ProtectedRoute path="/items" component={Items} />
+        <ProtectedRoute path="/customers" component={Customers} />
+        <ProtectedRoute path="/transactions" component={Transactions} />
+      </Switch>
+    </Router>
   );
 }
 
