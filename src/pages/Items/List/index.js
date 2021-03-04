@@ -13,7 +13,9 @@ function Items() {
     //   setIsloading(true);
     alert("Deleteing item");
     axios
-      .delete("http://localhost:4000/item/delete/" + id)
+      .delete(
+        "https://unravelserver-rgqnm.ondigitalocean.app/item/delete/" + id
+      )
       .then((response) => {
         console.log("res", response);
         fetchItem();
@@ -28,7 +30,7 @@ function Items() {
   const fetchItem = () => {
     setIsloading(true);
     axios
-      .get("http://localhost:4000/item/list")
+      .get("https://unravelserver-rgqnm.ondigitalocean.app/item/list")
       .then((response) => {
         console.log("res", response);
         // history.push("/items");

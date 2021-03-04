@@ -52,7 +52,7 @@ function Add() {
     data.append("data", JSON.stringify(obj));
 
     axios
-      .post("http://localhost:4000/item/add", data)
+      .post("https://unravelserver-rgqnm.ondigitalocean.app/item/add", data)
       .then((response) => {
         console.log("res", response);
         history.push("/items");

@@ -53,7 +53,10 @@ function Edit() {
     // data.append("data", JSON.stringify(obj));
 
     axios
-      .put("http://localhost:4000/item/update/" + id, obj)
+      .put(
+        "https://unravelserver-rgqnm.ondigitalocean.app/item/update/" + id,
+        obj
+      )
       .then((response) => {
         console.log("res", response);
         history.push("/items");
@@ -68,7 +71,7 @@ function Edit() {
   useEffect(() => {
     setFirstload(true);
     axios
-      .get(`http://localhost:4000/item/detail/${id}`)
+      .get(`https://unravelserver-rgqnm.ondigitalocean.app/item/detail/${id}`)
       .then((response) => {
         console.log("res get", response);
         setFirstload(false);

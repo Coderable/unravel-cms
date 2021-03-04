@@ -10,7 +10,7 @@ function List() {
   useEffect(() => {
     setIsloading(true);
     axios
-      .get("http://localhost:4000/user/list")
+      .get("https://unravelserver-rgqnm.ondigitalocean.app/user/list")
       .then((response) => {
         console.log("res", response);
         setIsloading(false);

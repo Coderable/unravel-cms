@@ -12,7 +12,7 @@ function Detail() {
   useEffect(() => {
     setIsloading(true);
     axios
-      .get(`http://localhost:4000/user/list/id/${id}`)
+      .get(`https://unravelserver-rgqnm.ondigitalocean.app/user/list/id/${id}`)
       .then((response) => {
         console.log("res", response);
         setIsloading(false);
